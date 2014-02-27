@@ -1,0 +1,152 @@
+/*html {
+      background: url(../static/img/bg.jpg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}*/
+
+body {
+      padding-top: 20px;
+      font-size: 16px;
+      font-family: "Open Sans",serif;
+      background: transparent;
+}
+
+h1 {
+      font-family: "Ubuntu", Arial, sans-serif;
+      font-weight: 400;
+}
+
+#intro h1{
+  font-size: 100px;
+  color: #DCEEF7;
+  text-shadow: 0px 2px 1px #bbbaba;
+}
+
+#intro h2{
+  color: white;
+  text-shadow: 1px 1px 1px #111;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+#intro{
+  background: url(../static/img/bg.jpg) repeat; 
+}
+
+#navigation{
+      font-family: "Ubuntu", Arial, sans-serif;
+}
+
+#aboutme{
+  font-size: 50px;
+}
+
+#aboutpic img{
+  border-radius: 30px;
+}
+
+.row{
+  padding-left: 40px;
+}
+
+.navbar-brand img{
+      border-radius: 30px;
+}
+.navbar-default {
+  background-color: #354AA6;
+  border-color: #475DBF;
+}
+.navbar-default .navbar-brand {
+  color: #B5B9C9;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #D3D7E6;
+}
+.navbar-default .navbar-text {
+  color: #B5B9C9;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #B5B9C9;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #D3D7E6;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #D3D7E6;
+  background-color: #475DBF;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #D3D7E6;
+  background-color: #475DBF;
+}
+.navbar-default .navbar-toggle {
+  border-color: #475DBF;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #475DBF;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #B5B9C9;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #B5B9C9;
+}
+.navbar-default .navbar-link {
+  color: #B5B9C9;
+}
+.navbar-default .navbar-link:hover {
+  color: #D3D7E6;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #B5B9C9;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #D3D7E6;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #D3D7E6;
+    background-color: #475DBF;
+  }
+}
+
+
+.featurette {
+  padding-top: 25px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: 10px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+.btn-super {
+    padding: 16px 24px;
+    font-size: 28px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+
+
