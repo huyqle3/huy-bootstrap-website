@@ -32,15 +32,16 @@ h1 {
 }
 
 #intro{
-  background: url(../static/img/bg.jpg) repeat; 
+  background: url(../static/img/bg.jpg);
+  background-repeat:repeat-x; 
 }
 
 #navigation{
       font-family: "Ubuntu", Arial, sans-serif;
 }
 
-#aboutme{
-  font-size: 50px;
+#about{
+  
 }
 
 #aboutpic img{
@@ -52,7 +53,7 @@ h1 {
 }
 
 .navbar-brand img{
-      border-radius: 30px;
+  border-radius: 30px;
 }
 .navbar-default {
   background-color: #354AA6;
@@ -114,39 +115,50 @@ h1 {
   }
 }
 
-
-.featurette {
-  padding-top: 25px; /* Vertically center images part 1: add padding above and below text. */
-  overflow: hidden; /* Vertically center images part 2: clear their floats. */
-}
-.featurette-image {
-  margin-top: 10px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-}
-
-/* Give some space on the sides of the floated elements so text doesn't run right into it. */
-.featurette-image.pull-left {
-  margin-right: 40px;
-}
-.featurette-image.pull-right {
-  margin-left: 40px;
-}
-
 /* Thin out the marketing headings */
 .featurette-heading {
-  font-size: 50px;
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
 }
 
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
 
-.btn-super {
-    padding: 16px 24px;
-    font-size: 28px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
+  .featurette img {
+    margin-top: 120px;
+    margin-bottom: 50px;
+  }
 }
+
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left:  15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left:  0;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
 
 
 
