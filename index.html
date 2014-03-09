@@ -23,6 +23,28 @@
 
 		</script>
 
+		<script>
+				$("#navigation ul li a[href^='#']").on('click', function(e) {
+
+		   // prevent default anchor click behavior
+		   e.preventDefault();
+
+		   // store hash
+		   var hash = this.hash;
+
+		   // animate
+		   $('html, body').animate({
+		       scrollTop: $(this.hash).offset().top
+		     }, 300, function(){
+
+		       // when done, add hash to url
+		       // (default click behaviour)
+		       window.location.hash = hash;
+		     });
+
+		});
+		</script>
+
 	</head>
 	<body data-spy="scroll" data-target="#navigation" id="top">
 			<div id = "navigation" class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0px; border: none;">
@@ -113,7 +135,7 @@
           <p><a class="btn btn-default" href="#" role="button">More Details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img src="static/img/nodedefender.png" height = "100px">
+          <img class = "thumbnail" src="static/img/nodedefender.png" height = "100px">
           <h2>Node Defender - 1st and 2nd Place</h2>
           <p>Node Defender was a game developed by Zumba Fitness Engineering for developers where the objective is to craft the best possible JavaScript strategy to defend against the server's onslaught of enemies.</p>
           <p><a class="btn btn-default" href="http://www.builds.cc/events/2013/11/24/ude2013-node-defender.html" role="button">More Details &raquo;</a></p>
@@ -130,7 +152,7 @@
         </div>
         </br>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src = "static/img/BUMET.png" width="400px">
+          <img class="featurette-image img-responsive thumbnail" src = "static/img/BUMET.png" width="400px">
         </div>
       </div>
 
@@ -140,7 +162,7 @@
       	</br>
         <div class="col-md-5">
           </br>
-          <img class="featurette-image img-responsive"  src = "static/img/youtubeimg.png" width="400px" style="margin-left: 20px">
+          <img class="featurette-image img-responsive thumbnail"  src = "static/img/youtubeimg.png" width="400px" style="margin-left: 20px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">YouTube Partner </br><span class="text-muted">December 2012 - present</span></h2>
@@ -158,7 +180,7 @@
         </div>
         </br>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src = "static/img/BUILDS.png" width="400px">
+          <img class="featurette-image img-responsive thumbnail" src = "static/img/BUILDS.png" width="400px">
         </div>
       </div>
 
@@ -167,7 +189,7 @@
       	</br>
         <div class="col-md-5">
           </br>
-          <img class="featurette-image img-responsive"  src = "static/img/globalappinitiative.png" width="200px" style="margin-left: 120px">
+          <img class="featurette-image img-responsive thumbnail"  src = "static/img/globalappinitiative.png" width="200px" style="margin-left: 120px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Global App Initiative</br><span class="text-muted">September 2013 - present</span></h2>
@@ -184,7 +206,7 @@
         </div>
         </br>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src = "static/img/digitalmediaclub.jpg" width="400px">
+          <img class="featurette-image img-responsive thumbnail" src = "static/img/digitalmediaclub.jpg" width="400px">
         </div>
       </div>
 
@@ -193,7 +215,7 @@
       	</br>
         <div class="col-md-5">
           </br>
-          <img class="featurette-image img-responsive"  src = "static/img/ce.png" width="200px" style="margin-left: 120px">
+          <img class="featurette-image img-responsive thumbnail"  src = "static/img/ce.png" width="200px" style="margin-left: 120px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Computer Engineering Club</br><span class="text-muted">November 2013 - present</span></h2>
@@ -211,7 +233,7 @@
         </div>
         </br>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src = "static/img/openweb.jpg" width="400px">
+          <img class="featurette-image img-responsive thumbnail" src = "static/img/openweb.jpg" width="400px">
         </div>
       </div>
 
@@ -220,7 +242,7 @@
       	</br>
         <div class="col-md-5">
           </br>
-          <img class="featurette-image img-responsive"  src = "static/img/CSAW13.png" width="300px" style="margin-left: 70px">
+          <img class="featurette-image img-responsive thumbnail"  src = "static/img/CSAW13.png" width="300px" style="margin-left: 70px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">NYU-Poly’s CSAW (Cyber-Security Awareness Week) Capture-The-Flag</br><span class="text-muted">October 2013</span></h2>
@@ -237,7 +259,7 @@
         </div>
         </br>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src = "static/img/mitllctf.png" width="300px" style="margin-left: 50px">
+          <img class="featurette-image img-responsive thumbnail" src = "static/img/mitllctf.png" width="300px" style="margin-left: 50px">
         </div>
       </div>
 
@@ -246,7 +268,7 @@
       	</br>
         <div class="col-md-5">
           </br>
-          <img class="featurette-image img-responsive"  src = "static/img/challenge.png" style= "border: 1px solid black" width="500px">
+          <img class="featurette-image img-responsive thumbnail"  src = "static/img/challenge.png" width="500px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">FourSquare Check-in Challenge</br><span class="text-muted">November 2013</span></h2>
@@ -264,9 +286,9 @@
         </div>
         </br>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src = "static/img/led.jpg" width="300px" style="margin-left: 50px">
+          <img class="featurette-image img-responsive thumbnail" src = "static/img/led.jpg" width="300px" style="margin-left: 50px">
+          </br>
         </div>
-        </br>
       </div>
 
       <hr class="featurette-divider">
@@ -274,7 +296,7 @@
       	</br>
         <div class="col-md-5">
           </br>
-          <img class="featurette-image img-responsive"  src = "static/img/filterdata.png" style= "border: 1px solid black" width="500px">
+          <img class="featurette-image img-responsive thumbnail"  src = "static/img/filterdata.png" width="500px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Filter Data</br><span class="text-muted">December 2013</span></h2>
@@ -301,7 +323,7 @@
       	</br>
         <div class="col-md-5">
           </br>
-          <img class="featurette-image img-responsive"  src = "static/img/gmsp.png" width="500px">
+          <img class="featurette-image img-responsive thumbnail"  src = "static/img/gmsp.png" width="500px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Gates Millennium Scholar</br><span class="text-muted">September 2012 - present</span></h2>
@@ -319,7 +341,7 @@
         </div>
         </br>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src = "static/img/yawkey.jpg" width="300px" style="margin-left: 50px">
+          <img class="featurette-image img-responsive thumbnail" src = "static/img/yawkey.jpg" width="300px" style="margin-left: 50px">
         </div>
       </div>
       
