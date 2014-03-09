@@ -153,7 +153,18 @@ h1 {
 
 #end{
   font-family: "Ubuntu", Arial, sans-serif;
-  color: #3BA0D4;
+  background-color: #51B0E0;
+  color: white;
 }
 
+#aboutmetitle1{
+  font-family: "Ubuntu", Arial, sans-serif;
+  font-size: 60px;
+  color: #51B0E0;
+  text-shadow: 0px 2px 1px #bbbaba;
+}
+
+#moredetails{
+  color: #3BA0D4;
+}
 
