@@ -18,9 +18,18 @@ h1 {
       font-weight: 400;
 }
 
+#wrapper{
+  background-color: #F7F7F7;
+  /*border:1px solid #51B0E0;*/
+}
+
+#links{
+  background-color: #51B0E0;
+}
+
 #intro h1{
   font-size: 100px;
-  color: #DCEEF7;
+  color: white;
   text-shadow: 0px 2px 1px #bbbaba;
 }
 
@@ -31,134 +40,115 @@ h1 {
   font-size: 40px;
 }
 
+#aboutmepic{
+  height: auto;
+  width:  430px;
+  border-radius:  30px;
+}
+
+#aboutmetitle{
+  font-family: "Ubuntu", Arial, sans-serif;
+  font-size: 70px;
+  color: #51B0E0;
+  text-shadow: 0px 2px 1px #bbbaba;
+}
+
 #intro{
   background: url(../static/img/bg.jpg);
   background-repeat:repeat-x; 
 }
 
+#projects{
+  background-color: #51B0E0; 
+}
+
+#projectscover{
+  background-color: white;
+  /*border:2px solid black; #F7F7F7;*/
+  border-radius: 10px;
+}
+
 #navigation{
-      font-family: "Ubuntu", Arial, sans-serif;
+  font-family: "Ubuntu", Arial, sans-serif;
 }
 
-#about{
-  
+.col-lg-4 > h2{
+  color: #3BA0D4;
 }
 
-#aboutpic img{
-  border-radius: 30px;
-}
-
-.row{
-  padding-left: 40px;
-}
-
-.navbar-brand img{
-  border-radius: 30px;
-}
 .navbar-default {
-  background-color: #354AA6;
-  border-color: #475DBF;
+  background-color: #FFFFFF;
+  border-color: #EDEDED;
 }
+
 .navbar-default .navbar-brand {
-  color: #B5B9C9;
+  color: #8A8A8A;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #D3D7E6;
+  color: #474747;
 }
 .navbar-default .navbar-text {
-  color: #B5B9C9;
+  color: #8A8A8A;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #B5B9C9;
+  color: #8A8A8A;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #D3D7E6;
+  color: #474747;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #D3D7E6;
-  background-color: #475DBF;
+  color: #474747;
+  background-color: #EDEDED;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #D3D7E6;
-  background-color: #475DBF;
+  color: #474747;
+  background-color: #EDEDED;
 }
 .navbar-default .navbar-toggle {
-  border-color: #475DBF;
+  border-color: #EDEDED;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #475DBF;
+  background-color: #EDEDED;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #B5B9C9;
+  background-color: #8A8A8A;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #B5B9C9;
+  border-color: #8A8A8A;
 }
 .navbar-default .navbar-link {
-  color: #B5B9C9;
+  color: #8A8A8A;
 }
 .navbar-default .navbar-link:hover {
-  color: #D3D7E6;
+  color: #474747;
 }
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #B5B9C9;
+    color: #8A8A8A;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #D3D7E6;
+    color: #474747;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #D3D7E6;
-    background-color: #475DBF;
+    color: #474747;
+    background-color: #EDEDED;
   }
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
+#navigation{
+    -webkit-box-shadow: 1px 1px 1px #EDEDED;
+    -moz-box-shadow:    1px 1px 1px #EDEDED;
+    box-shadow:         1px 1px 1px #EDEDED;
 }
 
-@media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
-  }
-
-  .featurette img {
-    margin-top: 120px;
-    margin-bottom: 50px;
-  }
+.featurette-heading{
+  color: #3BA0D4;
 }
 
-@media (min-width: 768px) {
-
-  /* Remove the edge padding needed for mobile */
-  .marketing {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
-  }
-  .navbar-wrapper .container {
-    padding-right: 15px;
-    padding-left:  15px;
-  }
-  .navbar-wrapper .navbar {
-    padding-right: 0;
-    padding-left:  0;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
+#list ul{
+   list-style-type: none;
 }
-
-
 
 

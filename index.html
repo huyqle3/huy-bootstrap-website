@@ -11,10 +11,60 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<link href="http://fonts.googleapis.com/css?family=Ubuntu|Open+Sans:400,600" rel="stylesheet" />
+
+		<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  		ga('create', 'UA-46691413-1', 'huyle.me');
+  		ga('send', 'pageview');
+
+		</script>
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+		var lastId, topMenu = $("#navtest"),
+		    topMenuHeight = topMenu.outerHeight() + 150,
+		    menuItems = topMenu.find("a"),
+		    scrollItems = menuItems.map(function() {
+		        var item = $($(this).attr("href"));
+		        if (item.length) {
+		            return item;
+		        }
+		    });
+
+		menuItems.click(function(e) {
+		    var href = $(this).attr("href"),
+		    topMenuHeight = topMenu.outerHeight() + 20,
+		        offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+		    $('html, body').stop().animate({
+		        scrollTop: offsetTop
+		    }, 300);
+		    e.preventDefault();
+		});
+
+		$(window).scroll(function() {
+		    var fromTop = $(this).scrollTop() + topMenuHeight;
+
+		    var cur = scrollItems.map(function() {
+		        if ($(this).offset().top < fromTop) return this;
+		    });
+		    cur = cur[cur.length - 1];
+		    var id = cur && cur.length ? cur[0].id : "";
+
+		    if (lastId !== id) {
+		        lastId = id;
+		        menuItems.parent().removeClass("active").end().filter("[href=#" + id + "]").parent().addClass("active");
+		    }
+		});
+		});
+		</script>
+
 	</head>
-	<body data-spy="scroll" id="top">
-		<div id = "navigation" class="navbar navbar-fixed-top" role="navigation" style="border:none;">
-			<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px; border: none;">
+	<body data-spy="scroll" data-target="#navigation" id="top">
+			<div id = "navigation" class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0px; border: none;">
 	      		<div class="container">
 	        		<div class="navbar-header">
 	          			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,51 +73,335 @@
 	            				<span class="icon-bar"></span>
 	            				<span class="icon-bar"></span>
 	          			</button>
-	          			<a class="navbar-brand" href="#top" style="padding: 0px;"><img src="static/img/logo.jpg" height="50px" width="80px" alt=""></a>
+	          			<a class="navbar-brand" href="#top" style="padding: 0px;"><img src="static/img/logo.png" height="45px" width="120px" alt=""></a>
 	        		</div>
-	        	<div class="collapse navbar-collapse">
-	          		<ul class="nav navbar-nav navbar-right">
-	            	<li class="active"><a href="#">Home</a></li>
-	            	<li><a href="#about">About</a></li>
+	        	<div id="navtest" class="collapse navbar-collapse">
+	          		<ul class="nav nav-pills navbar-right">
+	            	<li class="active"><a href="#top">Home</a></li>
+	            	<li><a href="#wrapper">About</a></li>
 	            	<li><a href="#projects">Projects</a></li>
-	            	<li><a href="#contact">Contact</a></li>
-	            	<li><a href="#contact">Resume</a></li>
-	            	<li><a href="#contact">Github</a></li>
-	            	<li><a href="#contact">Blog</a></li>
+	            	<li><a href="mailto:huyle333@bu.edu">Contact</a></li>
+	            	<li><a href="static/doc/Huy Le - Resume (2014).pdf">Resume</a></li>
+	            	<li><a href="http://www.github.com/huyle333">Github</a></li>
+	            	<li><a href="http://www.micromodspot.com/">Blog</a></li>
 	          	</ul>
 	        	</div>
 	      		</div>
-    	</div>
+	      	</div>
     	<div id = "intro" class="jumbotron">
       		<div class="container text-center">
       			</br>
-        		<h1>Huy Le</h1>
+        		<h1><img src = "static/img/huyletitle.png" height ="80"></h1>
         		<h2>Student. Software Developer. Tech Enthusiast.</h2>
         		</br>
-        	<p><a class="btn btn-primary btn-lg" role="button">Contact</a></p>
+        	<p><a class="btn btn-primary btn-lg" href="mailto:huyle333@bu.edu" role="button">Contact</a></p>
       		</div>
     	</div>
 
-      	<div id = "about" class="row featurette">
-	        <div class="col-md-7">
-	          <h2 class="featurette-heading">About. <span class="text-muted">Me.</span></h2>
-	          <p class="lead">I'm a software developer, computer science and mathematics undergraduate sophomore at Boston University.<br></br>
-				I come from the city of Lawrence, Massachusetts. I'm interested in all sorts of technology, and programming has become a huge hobby for me. I find machine learning, security, web and app development, and software applications all very intriguing, so I'm trying to be an expert in all of them. Learning new programming languages and techniques in computer science is my way to reach out and improve. I'm excited and passionate to learn more, implement ideas, and make things.</p>
-	        </div>
-	        <div id = "aboutpic" class="col-md-5">
-	          <img class="featurette-image img-responsive" img src="static/img/huyatude.jpg" height="500px" width="500px">
-	        </div>
-	     </div>
+    	<div class="container marketing">
+    		<div class = "jumbotron well" id = "wrapper">
+    		<div id = "aboutmetitle">About Me</div></br>
+		    <div id = "aboutme" class="row featurette">
+        		<div class="col-md-5">
+          			<img class="featurette-image img-responsive" img src="static/img/huyatude.jpg" id ="aboutmepic" alt="Huy at UDE 2013">
+        		</div>
+        		<div class="col-md-7">
+          			<p class="lead">I'm a software and web developer, computer science and mathematics student at Boston University.
 
-	     <div class="row featurette">
-	        <div class="col-md-5">
-	          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-	        </div>
-	        <div class="col-md-7">
-	          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-	          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-	        </div>
-      	</div>
+					I come from the city of Lawrence, Massachusetts. I'm interested in all sorts of technology, but programming has become a huge hobby and lifestyle for me. I find machine learning, security, web and app development, and software applications all very intriguing, so I'm trying to be an expert in all of them. Learning new programming languages and techniques is my way to reach out and improve. I'm excited to learn more, implement ideas, and make things.
+
+					Feel free to contact me at huyle333@bu.edu! Tell me if you want to collaborate on some projects or ideas.</p>
+					<br>
+					</br>
+        			</div>
+      		</div>
+
+      	<div class="jumbotron well" id = "links">
+      		<div class="container text-center">
+      			</br>
+        		<div class="btn-group">
+				<a class="btn-soc" href="http://www.linkedin.com/in/huyle333/"><img src="static/img/linked_in.png" height="100px" width = "100px" style="margin-left: 30px"/></a>
+				<a class="btn-soc" href="http://www.github.com/huyle333"><img src="static/img/github.png" height="100px" width = "100px" style="margin-left: 10px"/></a>
+				<a class="btn-soc" href="http://www.youtube.com/user/microwavesam"><img src="static/img/youtube.png" height="100px" width = "100px" style="margin-left: 10px"/></a>
+				<a class="btn-soc" href="http://www.micromodspot.com/"><img src="static/img/electrical_plug.png" height="100px" width = "100px" style="margin-left: 10px"/></a>
+				<a class="btn-soc" href="http://www.twitter.com/huyle333"><img src="static/img/twitter.png" height="100px" width = "100px" style="margin-left: 10px"/></a>
+				<a class="btn-soc" href="mailto:huyle333@bu.edu"><img src="static/img/e-mail.png" height="100px" width = "100px" style="margin-left: 10px"/></a>
+				</div>
+        		</br>
+      		</div>
+    	</div>
+    	</div>
+    	</br>
+    	</div>
+
+    <div id = "projects">
+    <div id = "projectscover" class = "container marketing jumbotron well">
+    <div id = "aboutmetitle">Featured Projects</div>
+    </br>
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="static/img/snappylink.png" height = "100px" style="margin-left: 100px">
+          <h2>SnappyLink</h2>
+          <p>Users who browse through Reddit, Google, Wikipedia, news articles, Bing, and YouTube want information quickly and easily. With the SnappyLink Chrome extension, users may preview every article, Google link, YouTube video, and Reddit post by hovering their mouse over the link.</p>
+          <p><a class="btn btn-default" href="http://www.micromodspot.com/2014/02/hackbeanpot-2014.html" role="button">More Details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="static/img/mbtaicon.png" height = "100px" style="margin-left: 100px">
+          <h2>MBTA On Time</h2>
+          <p>A simple windows mobile application that uses MBTA data to inform users accurately the arrival, location, and destination of MBTA trains in Boston, MA.</p>
+          <p><a class="btn btn-default" href="#" role="button">More Details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="static/img/nodedefender.png" height = "100px">
+          <h2>Node Defender - 1st and 2nd Place</h2>
+          <p>Node Defender was a game developed by Zumba Fitness Engineering for developers where the objective is to craft the best possible JavaScript strategy to defend against the server's onslaught of enemies.</p>
+          <p><a class="btn btn-default" href="http://www.builds.cc/events/2013/11/24/ude2013-node-defender.html" role="button">More Details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+      </br>
+      <hr class="featurette-divider">
+
+	<div id = "aboutmetitle">Experience</div>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">IT Help Desk Assistant </br><span class="text-muted">November 2013 - present</span></h2>
+          <p class="lead">I provided help and support for troubleshooting issues on Mac, Windows, Linux computers. I researched on developing and tweaking an educational platform using Python, Django, Ruby. I used VPN, Virtual Machines, assisted in setting-up projectors, audio and video equipment, Symantec Ghost Imaging, DreamSpark. </p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src = "static/img/BUMET.png" width="400px">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <img class="featurette-image img-responsive"  src = "static/img/youtubeimg.png" width="400px" style="margin-left: 20px">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">YouTube Partner </br><span class="text-muted">December 2012 - present</span></h2>
+          <p class="lead">When users on YouTube reach a certain level of views and subscribers, users may enter a partnership program with a network in order to receive elevated privileges from YouTube and receive revenue from advertisements on their videos. I accumulated over four million total views and twelve thousand subscribers on YouTube across four channels. I created videos in which I explained to viewers how to soft-mod devices, use programs, software, and fix troubleshooting computer problems. I also created videos in which I commentated, analyzed, and reviewed video games. </p>
+        </div>
+      </div>
+
+      </br>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">BUILDs</br><span class="text-muted">September 2013 - present</span></h2>
+          <p class="lead">BUILDS is a student-run research lab and workshop that provides BU students with tools and resources for conducting collaborative student-led tech projects. </p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src = "static/img/builds.png" width="400px">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <img class="featurette-image img-responsive"  src = "static/img/globalappinitiative.png" width="200px" style="margin-left: 120px">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Global App Initiative</br><span class="text-muted">September 2013 - present</span></h2>
+          <p class="lead">Global App Initiative is a student group at BU that brings students of all backgrounds together to develop innovative mobile applications for nonprofit organizations. Our objective is to gain and apply skills for solving global issues from a social, economic, and environmental perspective.</p>
+        </div>
+      </div>
+
+      </br>
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Digital Media Club</br><span class="text-muted">September 2013 - present</span></h2>
+          <p class="lead">The Digital Media Club at Boston University provides an environment where students can discover new areas of interest and develop real-world skills that make them stand out from 98% of their peers who hold the same degree. Whatever your skills may be, from coding and design to video and marketing, and wherever your interests may lie, from app development to digital ad strategy, you’ll have a home at DMCBU.</p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src = "static/img/digitalmediaclub.jpg" width="400px">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <img class="featurette-image img-responsive"  src = "static/img/ce.png" width="200px" style="margin-left: 120px">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Computer Engineering Club</br><span class="text-muted">November 2013 - present</span></h2>
+          <p class="lead">The main objective of the Boston University Computer Engineering Club is to encourage students from different academic backgrounds to engage in projects related to Computer Engineering. Members will spend most of their time working on software design and development. Events held by the Comp ENG Club will mainly be programming workshops and “hackathons.”</p>
+        </div>
+      </div>
+
+      </br>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Open Web</br><span class="text-muted">March 2014 - present</span></h2>
+          <p class="lead">The Digital Media Club at Boston University provides an environment where students can discover new areas of interest and develop real-world skills that make them stand out from 98% of their peers who hold the same degree. Whatever your skills may be, from coding and design to video and marketing, and wherever your interests may lie, from app development to digital ad strategy, you’ll have a home at DMCBU.</p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src = "static/img/openweb.jpg" width="400px">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <img class="featurette-image img-responsive"  src = "static/img/CSAW13.png" width="300px" style="margin-left: 70px">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">NYU-Poly’s CSAW (Cyber-Security Awareness Week) Capture-The-Flag</br><span class="text-muted">October 2013</span></h2>
+          <p class="lead">BUILDS has qualified for the finals of NYU-Poly’s CSAW (Cyber-Security Awareness Week) Capture-The-Flag competition. This event has teams from around the world competing to solve computer security challenges.</p>
+        </div>
+      </div>
+
+      </br>
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">MIT LL CTF - 3rd Place</br><span class="text-muted">October 2013</span></h2>
+          <p class="lead">In this version of a "Cyber" Capture The Flag competition, you will work in small teams to both defend your system and attack those of others. The target system is a set of Android applications and associated back-end web services.</p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src = "static/img/mitllctf.png" width="300px" style="margin-left: 50px">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <img class="featurette-image img-responsive"  src = "static/img/challenge.png" style= "border: 1px solid black" width="500px">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">FourSquare Check-in Challenge</br><span class="text-muted">November 2013</span></h2>
+          <p class="lead">Ever wanted to use FourSquare and have a fun challenge of who could get to where? Well, with the check-in challenge website, you can create challenges to get to certain locations and see who gets the most points in a time limit. This website add on uses the Foursquare API check-ins to see the locations you've been. You can start up a challenge with a particular genre with friends or strangers. See who's been where in the time limit, and what they think. You earn points for going to the places listed in the challenge, and you can see who marks on top. A way to having an incentive to going to new places! </p>
+        </div>
+      </div>
+
+      </br>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">LED LiquidTile 3x3 RGB</br><span class="text-muted">October 2013</span></h2>
+          <p class="lead">The goal of the LiquidTile project is to make RGB LED lighting tiles with a software interface for computer control. I assisted in creating a LED 3x3 RGB Tile with an Arduino by soldering and helping to assemble.</p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src = "static/img/led.jpg" width="300px" style="margin-left: 50px">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <img class="featurette-image img-responsive"  src = "static/img/filterdata.png" style= "border: 1px solid black" width="500px">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Filter Data</br><span class="text-muted">December 2013</span></h2>
+          <p class="lead">Filter Data created a web application for the Hack Reduce hackathon 2013 that uses the big data set of Mass DOT Commuter Rail CSV from the year 2011 to compare whether the amount of passengers and the capacity of the trains affects whether the trains make it to their scheduled destination on time or not. We provided a few dynamic graphs for manipulating and watching the information via our web application. JavaScript usage for data visualization. </p>
+        </div>
+      </div>
+
+      </br>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">HowToNest</br><span class="text-muted">January 2014</span></h2>
+          <p class="lead">how to nest provides easy-to-use slides and interaction for your first installation of a nest labs product. The website is viewable on phones or on tablets, and you can proceed through each step at your own pace. </p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <iframe width="420" height="325" src="http://www.youtube.com/embed/YJGfk0CzYu4"></iframe>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <img class="featurette-image img-responsive"  src = "static/img/gmsp.png" width="500px">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Gates Millennium Scholar</br><span class="text-muted">September 2012 - present</span></h2>
+          <p class="lead">Administered by the United Negro College Fund, the foundation donated US$1.5 billion for scholarships to high achieving minority students.</p>
+        </div>
+      </div>
+
+      </br>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Yawkey Scholar</br><span class="text-muted">September 2012 - present</span></h2>
+          <p class="lead">A firm believer in equal opportunity, Mrs. Yawkey and the Yawkey Foundations established scholarship funds at Yale University, Boston College, and Boston College High School, was a supporter of the Jackie Robinson Scholarship Program, and supported several other educational institutions to provide minority students and others with scholarship aid.</p>
+        </div>
+        </br>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src = "static/img/yawkey.jpg" width="300px" style="margin-left: 50px">
+        </div>
+      </div>
+      
+      <hr class="featurette-divider">
+      <div class="row featurette">
+      	</br>
+        <div class="col-md-5">
+          </br>
+          <iframe width="420" height="325" src="https://www.youtube.com/embed/GXqyj3xleUM" style= "margin-left: 20px"></iframe>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Other Extracurriculars</br><span class="text-muted">2012 - present</span></h2>
+          <div class = "lead" id ="list">
+					<ul>
+					<li>Playing Basketball</li>
+					<li>Playing the Trumpet</li>
+					<li>Red Lotus - Lion Dancing</li>
+					<li>Anh Sang - Buddhist Youth Group</li>
+					<li>Vietnamese Student Association</li>
+					<li>Asian Student Union</li>
+					<li>Tennis Club</li>
+					<li>Badmitton Club</li>
+					<li>BU Astronomical Society</li>
+					<li>BU Video Game Society</li>
+					<li>BU PC Gaming Club</li>
+					<li>Society of Asian Scientists and Engineers</li>
+					<li>Habitat for Humanity</li>
+					</ul> 
+		</div>
+        </div>
+      </div>
+      </br>
+
+      </div>
+      </div>
+
+
+
+        <div class = "navbar navbar-default">
+            <div class = "container">
+            	<a href = "#top" class = "navbar-btn btn-primary btn pull-right">Back to top</a>
+                <p class = "navbar-text pull-left">&copy; 2014 - Huy Le</a></p>
+            </div>
+        </div>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
