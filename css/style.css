@@ -5,6 +5,9 @@
       -o-background-size: cover;
       background-size: cover;
 }*/
+textarea {
+    max-width: 90%; 
+}
 
 body {
       padding-top: 20px;
@@ -19,7 +22,7 @@ h1 {
 }
 
 #wrapper{
-  background-color: #F7F7F7;
+  background-color: #FCFCFC;
   /*border:1px solid #51B0E0;*/
 }
 
@@ -48,7 +51,7 @@ h1 {
 
 #aboutmetitle{
   font-family: "Ubuntu", Arial, sans-serif;
-  font-size: 70px;
+  font-size: 60px;
   color: #51B0E0;
   text-shadow: 0px 2px 1px #bbbaba;
 }
@@ -66,6 +69,10 @@ h1 {
   background-color: white;
   /*border:2px solid black; #F7F7F7;*/
   border-radius: 10px;
+}
+
+#projectscover{
+  background-color: #FAFAFA;
 }
 
 #navigation{
@@ -152,9 +159,13 @@ h1 {
 }
 
 #end{
-  font-family: "Ubuntu", Arial, sans-serif;
   background-color: #51B0E0;
-  color: white;
+  color: #FAFAFA;
+}
+
+#end h1{
+  font-family: "Ubuntu", Arial, sans-serif;
+  font-size: 40px;
 }
 
 #aboutmetitle1{
